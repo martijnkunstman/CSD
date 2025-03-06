@@ -1,0 +1,938 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Mar 06, 2025 at 09:14 PM
+-- Server version: 8.0.41-0ubuntu0.24.04.1
+-- PHP Version: 8.4.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `csd`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `calendar`
+--
+
+CREATE TABLE `calendar` (
+  `calendar_id` int NOT NULL,
+  `year` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `calendar`
+--
+
+INSERT INTO `calendar` (`calendar_id`, `year`) VALUES
+(1, 2024);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `calendar_part`
+--
+
+CREATE TABLE `calendar_part` (
+  `calendar_id` int NOT NULL,
+  `calendar_part_id` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `calendar_part`
+--
+
+INSERT INTO `calendar_part` (`calendar_id`, `calendar_part_id`) VALUES
+(1, 34),
+(1, 35),
+(1, 37),
+(1, 38),
+(1, 39),
+(1, 40),
+(1, 41),
+(1, 42),
+(1, 43),
+(1, 44),
+(1, 45),
+(1, 46),
+(1, 47),
+(1, 48),
+(1, 49),
+(1, 50),
+(1, 51),
+(1, 52),
+(1, 53),
+(1, 54),
+(1, 55),
+(1, 56),
+(1, 57),
+(1, 58),
+(1, 59),
+(1, 60),
+(1, 61),
+(1, 62),
+(1, 63),
+(1, 64),
+(1, 65),
+(1, 66),
+(1, 67),
+(1, 68),
+(1, 69),
+(1, 70),
+(1, 71),
+(1, 72),
+(1, 73),
+(1, 74),
+(1, 75),
+(1, 76),
+(1, 77),
+(1, 78),
+(1, 79),
+(1, 80),
+(1, 81),
+(1, 82),
+(1, 83),
+(1, 84),
+(1, 85),
+(1, 86);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `calendar_parts`
+--
+
+CREATE TABLE `calendar_parts` (
+  `calendar_part_id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `start` date DEFAULT NULL,
+  `end` date DEFAULT NULL,
+  `calendar_part_type_id` int DEFAULT NULL,
+  `leerjaar` int DEFAULT '0',
+  `learnline_id` int DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `calendar_parts`
+--
+
+INSERT INTO `calendar_parts` (`calendar_part_id`, `name`, `start`, `end`, `calendar_part_type_id`, `leerjaar`, `learnline_id`) VALUES
+(1, '1', '2024-01-06', '2024-01-07', 5, 0, 0),
+(2, '2', '2024-01-13', '2024-01-14', 5, 0, 0),
+(3, '3', '2024-01-20', '2024-01-21', 5, 0, 0),
+(4, '4', '2024-01-27', '2024-01-28', 5, 0, 0),
+(5, '5', '2024-02-03', '2024-02-04', 5, 0, 0),
+(6, '6', '2024-02-10', '2024-02-11', 5, 0, 0),
+(7, '7', '2024-02-17', '2024-02-18', 5, 0, 0),
+(8, '8', '2024-02-24', '2024-02-25', 5, 0, 0),
+(9, '9', '2024-03-02', '2024-03-03', 5, 0, 0),
+(10, '10', '2024-03-09', '2024-03-10', 5, 0, 0),
+(11, '11', '2024-03-16', '2024-03-17', 5, 0, 0),
+(12, '12', '2024-03-23', '2024-03-24', 5, 0, 0),
+(13, '13', '2024-03-30', '2024-03-31', 5, 0, 0),
+(14, '14', '2024-04-06', '2024-04-07', 5, 0, 0),
+(15, '15', '2024-04-13', '2024-04-14', 5, 0, 0),
+(16, '16', '2024-04-20', '2024-04-21', 5, 0, 0),
+(17, '17', '2024-04-27', '2024-04-28', 5, 0, 0),
+(18, '18', '2024-05-04', '2024-05-05', 5, 0, 0),
+(19, '19', '2024-05-11', '2024-05-12', 5, 0, 0),
+(20, '20', '2024-05-18', '2024-05-19', 5, 0, 0),
+(21, '21', '2024-05-25', '2024-05-26', 5, 0, 0),
+(22, '22', '2024-06-01', '2024-06-02', 5, 0, 0),
+(23, '23', '2024-06-08', '2024-06-09', 5, 0, 0),
+(24, '24', '2024-06-15', '2024-06-16', 5, 0, 0),
+(25, '25', '2024-06-22', '2024-06-23', 5, 0, 0),
+(26, '26', '2024-06-29', '2024-06-30', 5, 0, 0),
+(27, '27', '2024-07-06', '2024-07-07', 5, 0, 0),
+(28, '28', '2024-07-13', '2024-07-14', 5, 0, 0),
+(29, '29', '2024-07-20', '2024-07-21', 5, 0, 0),
+(30, '30', '2024-07-27', '2024-07-28', 5, 0, 0),
+(31, '31', '2024-08-03', '2024-08-04', 5, 0, 0),
+(32, '32', '2024-08-10', '2024-08-11', 5, 0, 0),
+(33, '33', '2024-08-17', '2024-08-18', 5, 0, 0),
+(34, '34', '2024-08-24', '2024-08-25', 5, 0, 0),
+(35, '35', '2024-08-31', '2024-09-01', 5, 0, 0),
+(36, '36', '2024-09-07', '2024-09-08', 5, 0, 0),
+(37, '37', '2024-09-14', '2024-09-15', 5, 0, 0),
+(38, '38', '2024-09-21', '2024-09-22', 5, 0, 0),
+(39, '39', '2024-09-28', '2024-09-29', 5, 0, 0),
+(40, '40', '2024-10-05', '2024-10-06', 5, 0, 0),
+(41, '41', '2024-10-12', '2024-10-13', 5, 0, 0),
+(42, '42', '2024-10-19', '2024-10-20', 5, 0, 0),
+(43, '43', '2024-10-26', '2024-10-27', 5, 0, 0),
+(44, '44', '2024-11-02', '2024-11-03', 5, 0, 0),
+(45, '45', '2024-11-09', '2024-11-10', 5, 0, 0),
+(46, '46', '2024-11-16', '2024-11-17', 5, 0, 0),
+(47, '47', '2024-11-23', '2024-11-24', 5, 0, 0),
+(48, '48', '2024-11-30', '2024-12-01', 5, 0, 0),
+(49, '49', '2024-12-07', '2024-12-08', 5, 0, 0),
+(50, '50', '2024-12-14', '2024-12-15', 5, 0, 0),
+(51, '51', '2024-12-21', '2024-12-22', 5, 0, 0),
+(52, '52', '2024-12-28', '2024-12-29', 5, 0, 0),
+(53, '1', '2025-01-04', '2025-01-05', 5, 0, 0),
+(54, '2', '2025-01-11', '2025-01-12', 5, 0, 0),
+(55, '3', '2025-01-18', '2025-01-19', 5, 0, 0),
+(56, '4', '2025-01-25', '2025-01-26', 5, 0, 0),
+(57, '5', '2025-02-01', '2025-02-02', 5, 0, 0),
+(58, '6', '2025-02-08', '2025-02-09', 5, 0, 0),
+(59, '7', '2025-02-15', '2025-02-16', 5, 0, 0),
+(60, '8', '2025-02-22', '2025-02-23', 5, 0, 0),
+(61, '9', '2025-03-01', '2025-03-02', 5, 0, 0),
+(62, '10', '2025-03-08', '2025-03-09', 5, 0, 0),
+(63, '11', '2025-03-15', '2025-03-16', 5, 0, 0),
+(64, '12', '2025-03-22', '2025-03-23', 5, 0, 0),
+(65, '13', '2025-03-29', '2025-03-30', 5, 0, 0),
+(66, '14', '2025-04-05', '2025-04-06', 5, 0, 0),
+(67, '15', '2025-04-12', '2025-04-13', 5, 0, 0),
+(68, '16', '2025-04-19', '2025-04-20', 5, 0, 0),
+(69, '17', '2025-04-26', '2025-04-27', 5, 0, 0),
+(70, '18', '2025-05-03', '2025-05-04', 5, 0, 0),
+(71, '19', '2025-05-10', '2025-05-11', 5, 0, 0),
+(72, '20', '2025-05-17', '2025-05-18', 5, 0, 0),
+(73, '21', '2025-05-24', '2025-05-25', 5, 0, 0),
+(74, '22', '2025-05-31', '2025-06-01', 5, 0, 0),
+(75, '23', '2025-06-07', '2025-06-08', 5, 0, 0),
+(76, '24', '2025-06-14', '2025-06-15', 5, 0, 0),
+(77, '25', '2025-06-21', '2025-06-22', 5, 0, 0),
+(78, '26', '2025-06-28', '2025-06-29', 5, 0, 0),
+(79, '27', '2025-07-05', '2025-07-06', 5, 0, 0),
+(80, '28', '2025-07-12', '2025-07-13', 5, 0, 0),
+(81, '29', '2025-07-19', '2025-07-20', 5, 0, 0),
+(82, '30', '2025-07-26', '2025-07-27', 5, 0, 0),
+(83, '31', '2025-08-02', '2025-08-03', 5, 0, 0),
+(84, '32', '2025-08-09', '2025-08-10', 5, 0, 0),
+(85, '33', '2025-08-16', '2025-08-17', 5, 0, 0),
+(86, '34', '2025-08-23', '2025-08-24', 5, 0, 0),
+(87, '35', '2025-08-30', '2025-08-31', 5, 0, 0),
+(88, '36', '2025-09-06', '2025-09-07', 5, 0, 0),
+(89, '37', '2025-09-13', '2025-09-14', 5, 0, 0),
+(90, '38', '2025-09-20', '2025-09-21', 5, 0, 0),
+(91, '39', '2025-09-27', '2025-09-28', 5, 0, 0),
+(92, '40', '2025-10-04', '2025-10-05', 5, 0, 0),
+(93, '41', '2025-10-11', '2025-10-12', 5, 0, 0),
+(94, '42', '2025-10-18', '2025-10-19', 5, 0, 0),
+(95, '43', '2025-10-25', '2025-10-26', 5, 0, 0),
+(96, '44', '2025-11-01', '2025-11-02', 5, 0, 0),
+(97, '45', '2025-11-08', '2025-11-09', 5, 0, 0),
+(98, '46', '2025-11-15', '2025-11-16', 5, 0, 0),
+(99, '47', '2025-11-22', '2025-11-23', 5, 0, 0),
+(100, '48', '2025-11-29', '2025-11-30', 5, 0, 0),
+(101, '49', '2025-12-06', '2025-12-07', 5, 0, 0),
+(102, '50', '2025-12-13', '2025-12-14', 5, 0, 0),
+(103, '51', '2025-12-20', '2025-12-21', 5, 0, 0),
+(104, '52', '2025-12-27', '2025-12-28', 5, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `calendar_part_types`
+--
+
+CREATE TABLE `calendar_part_types` (
+  `calendar_part_type_id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `layer` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `calendar_part_types`
+--
+
+INSERT INTO `calendar_part_types` (`calendar_part_type_id`, `name`, `layer`) VALUES
+(1, 'module', 0),
+(2, 'ontwikkelweek', 0),
+(3, 'vakantie', 1),
+(4, 'studiedag', 1),
+(5, 'weekend', 1),
+(6, 'excursie', 0),
+(7, 'introductie', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cohorts`
+--
+
+CREATE TABLE `cohorts` (
+  `cohort_id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `start_year` int DEFAULT NULL,
+  `kd_id` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cohorts`
+--
+
+INSERT INTO `cohorts` (`cohort_id`, `name`, `description`, `start_year`, `kd_id`) VALUES
+(1, 'cohort 2024', 'Year 1: 2024-2025\r\nYear 2: 2025-2026\r\nYear 3: 2026-2027\r\nYear 4: 2027-2028', 2024, 1),
+(2, 'cohort 2023', 'Year 1: 2023-2024\r\nYear 2: 2024-2025\r\nYear 3: 2025-2026\r\nYear 4: 2026-2027', 2023, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cohort_curunits`
+--
+
+CREATE TABLE `cohort_curunits` (
+  `cohort_curunit_id` int NOT NULL,
+  `cohort_id` int DEFAULT NULL,
+  `curunit_id` int DEFAULT NULL,
+  `calendar_part_id` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cohort_curunit_holders`
+--
+
+CREATE TABLE `cohort_curunit_holders` (
+  `cohort_curunit_id` int NOT NULL,
+  `curunit_holder_id` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `curunits`
+--
+
+CREATE TABLE `curunits` (
+  `curunit_id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `curunit_type_id` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `curunit_holders`
+--
+
+CREATE TABLE `curunit_holders` (
+  `curunit_holder_id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `short` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `curunit_holders`
+--
+
+INSERT INTO `curunit_holders` (`curunit_holder_id`, `name`, `short`) VALUES
+(1, 'Martijn Kunstman', 'MKU'),
+(2, 'Jan van Os', 'JOS'),
+(3, 'Lukas Stroomer', 'LST'),
+(4, 'Thomas Tijs', 'TTI'),
+(5, 'Koen Borghols', 'KBR'),
+(6, 'Kamiel de Visser', 'KVI');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `curunit_kd_skill`
+--
+
+CREATE TABLE `curunit_kd_skill` (
+  `curunit_id` int NOT NULL,
+  `kd_skill_id` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `curunit_kd_wp`
+--
+
+CREATE TABLE `curunit_kd_wp` (
+  `curunit_id` int NOT NULL,
+  `kd_wp_id` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `curunit_tag`
+--
+
+CREATE TABLE `curunit_tag` (
+  `curunit_id` int NOT NULL,
+  `curunit_tag_id` int NOT NULL,
+  `order` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `curunit_tags`
+--
+
+CREATE TABLE `curunit_tags` (
+  `curunit_tag_id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `curunit_types`
+--
+
+CREATE TABLE `curunit_types` (
+  `curunit_type_id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `curunit_types`
+--
+
+INSERT INTO `curunit_types` (`curunit_type_id`, `name`, `description`) VALUES
+(1, 'module', NULL),
+(2, 'ontwikkelweek', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kds`
+--
+
+CREATE TABLE `kds` (
+  `kd_id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `crebo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `kds`
+--
+
+INSERT INTO `kds` (`kd_id`, `name`, `crebo`) VALUES
+(1, 'Software developer', '25604');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kd_core`
+--
+
+CREATE TABLE `kd_core` (
+  `kd_id` int NOT NULL,
+  `kd_core_id` int NOT NULL,
+  `order` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `kd_core`
+--
+
+INSERT INTO `kd_core` (`kd_id`, `kd_core_id`, `order`) VALUES
+(1, 1, 1),
+(1, 2, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kd_cores`
+--
+
+CREATE TABLE `kd_cores` (
+  `kd_core_id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `info1` text COLLATE utf8mb4_unicode_ci,
+  `info2` text COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `kd_cores`
+--
+
+INSERT INTO `kd_cores` (`kd_core_id`, `name`, `info1`, `info2`) VALUES
+(1, 'Realiseert software', 'Complexiteit: De complexiteit wordt bepaald door de aard en diversiteit van mogelijke opdrachten, waarbij de beginnend beroepsbeoefenaar zich telkens moet inleven in de specifieke context waarvoor hij/zij software realiseert. Andere complicerende factoren zijn de eisen en wensen van opdrachtgevers, diversiteit in mogelijke programmeertalen, de technische (on)mogelijkheden van de IT-infrastructuur en/of devices waarop de software moet kunnen draaien. Vaak is sprake van grote tijdsdruk. De diversiteit van opdrachten is groot, maar het programmeren vraagt ook een zekere routinematigheid, vanwege de vaste semantiek en syntax van toe te passen programmeertalen. Abstract kunnen denken, probleemoplossend vermogen, analytische vaardigheden en uiteraard het kunnen programmeren, zijn benodigde vaardigheden. Daarnaast is specialistische kennis nodig omtrent het programmeren en ontwikkelingsmethodieken en brede kennis van security en privacy.', 'Verantwoordelijkheid en zelfstandigheid: De beginnend beroepsbeoefenaar werkt zelfstandig aan het realiseren van software en is verantwoordelijk voor zijn/haar eigen deeltaken. In veel gevallen werkt hij/zij samen met collega\'s, in (multidisciplinaire)projectteams en met opdrachtgevers/leidinggevende/belanghebbenden. Indien nodig schakelt de beginnend beroepsbeoefenaar collega\'s en/of derden ter ondersteuning in om de software te realiseren. De eindverantwoordelijkheid voor het eindproduct ligt vaak bij een projectleider of leidinggevende. In sommige gevallen, vaak bij kleinere projecten, is de beginnend beroepsbeoefenaar zelf eindverantwoordelijk.'),
+(2, 'Werkt in een ontwikkelteam', 'Complexiteit: De complexiteit wordt bepaald door de aard en diversiteit van mogelijke opdrachten, waarbij de beginnend beroepsbeoefenaar zich telkens moet inleven in de specifieke context waarvoor hij/zij software realiseert. Andere complicerende factoren zijn het werken in wisselende vaak multidisciplinaire teams en het werken onder tijdsdruk. Het werken in ontwikkelteams is veelal niet routinematig. Het werken in een ontwikkelteams vereist van de beginnend beroepsbeoefenaar specialistische kennis van het programmeren en specifieke vaardigheden omtrent het voeren van gesprekken, samenwerken en het kunnen presenteren. De beginnend beroepsbeoefenaar moet gestructureerd en navolgbaar kunnen werken. Daarnaast moet de beginnend beroepsbeoefenaar kunnen werken met in achtneming van eisen omtrent security en privacy.', 'Verantwoordelijkheid en zelfstandigheid: De beginnend beroepsbeoefenaar werkt samen met collega\'s en met projectleiders in (multidisciplinaire)projectteams en/of ontwikkelteams. Binnen het team heeft hij/zij een eigen rol en eigen taken, waaraan hij/zij zelfstandig werkt. De eindverantwoordelijkheid voor het eindproduct ligt vaak bij de projectleider of leidinggevende.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kd_core_skills`
+--
+
+CREATE TABLE `kd_core_skills` (
+  `kd_core_id` int NOT NULL,
+  `kd_skill_id` int NOT NULL,
+  `order` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `kd_core_skills`
+--
+
+INSERT INTO `kd_core_skills` (`kd_core_id`, `kd_skill_id`, `order`) VALUES
+(1, 1, 1),
+(1, 2, 2),
+(1, 3, 3),
+(1, 4, 4),
+(1, 5, 5),
+(1, 6, 6),
+(1, 7, 7),
+(1, 8, 8),
+(1, 9, 9),
+(1, 10, 10),
+(1, 11, 11),
+(1, 12, 12),
+(1, 13, 13),
+(1, 14, 14),
+(1, 15, 15),
+(1, 16, 16),
+(1, 17, 17),
+(1, 18, 18),
+(1, 19, 19),
+(1, 20, 20),
+(1, 21, 21),
+(1, 22, 22),
+(1, 23, 23),
+(1, 24, 24),
+(2, 2, 3),
+(2, 3, 1),
+(2, 4, 2),
+(2, 12, 4),
+(2, 25, 5),
+(2, 26, 6),
+(2, 27, 7),
+(2, 28, 8),
+(2, 29, 9);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kd_core_wps`
+--
+
+CREATE TABLE `kd_core_wps` (
+  `kd_core_id` int NOT NULL,
+  `kd_wp_id` int NOT NULL,
+  `order` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `kd_core_wps`
+--
+
+INSERT INTO `kd_core_wps` (`kd_core_id`, `kd_wp_id`, `order`) VALUES
+(1, 1, 1),
+(1, 2, 2),
+(1, 3, 3),
+(1, 4, 4),
+(1, 5, 5),
+(2, 6, 1),
+(2, 7, 2),
+(2, 8, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kd_skills`
+--
+
+CREATE TABLE `kd_skills` (
+  `kd_skill_id` int NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `kd_skills`
+--
+
+INSERT INTO `kd_skills` (`kd_skill_id`, `description`) VALUES
+(1, 'Heeft brede kennis van nieuwe ontwikkelingen op het gebied van software, zoals AI (artificial intelligence), machine learning en big data'),
+(2, 'Heeft specialistische kennis van één of meerdere softwareontwikkelingsmethodieken zoals waterval, iteratief of incrementeel'),
+(3, 'Heeft specialistische kennis van één of meerdere softwareontwikkelingsprogramma’s zoals IDE’s'),
+(4, 'Heeft specialistische kennis van één of meerdere softwareontwikkelingstechnieken zoals OOP, ECS of functioneel programmeren'),
+(5, 'Heeft specialistische kennis van de IT-infrastructuur en/of ontwikkelingsplatforms waarop de software wordt toegepast'),
+(6, 'Heeft specialistische kennis van één of meer programmeertalen (syntax en semantiek)'),
+(7, 'Heeft specialistische kennis van licenties en gebruiksrechten'),
+(8, 'Heeft brede kennis van relevante wetgeving zoals op het gebied van privacy, copyright en auteursrecht, computercriminaliteit'),
+(9, 'Heeft brede kennis van cyber security en bedreigingen van netwerken en systemen'),
+(10, 'Heeft specialistische kennis van de principes van object oriented programming (OOP), waaronder encapsulation, modularity, inheritance, polymorphism'),
+(11, 'Heeft kennis van ontwikkelingen op het vlak van ICT-infrastructuur en devices en welke consequenties deze op software development hebben'),
+(12, 'Heeft specialistische kennis van één of meerdere testingtools en testtechnieken'),
+(13, 'Kan één of meerdere programmeertalen voor softwareontwikkeling toepassen (syntax en semantiek)'),
+(14, 'Kan ontwerpeisen toepassen'),
+(15, 'Kan diagrammen lezen, interpreteren en maken zoals bijvoorbeeld UML'),
+(16, 'Kan relevante wetgeving op het gebied van privacy, intellectueel eigendomsrecht, computercriminaliteit toepassen op software'),
+(17, 'Kan één of meerdere softwareontwikkelingsmethodieken toepassen zoals waterval, iteratief of incrementeel'),
+(18, 'Kan één of meerdere softwareontwikkelingsprogramma’s toepassen zoals IDE’s'),
+(19, 'Kan één of meerdere softwareontwikkelingstechnieken toepassen zoals object georiënteerd programmeren, ECS, functioneel programmeren'),
+(20, 'Kan gegevensverzamelingen omzetten in andere structuren'),
+(21, 'Kan actief versiebeheer toepassen'),
+(22, 'Kan technieken voor informatiebeveiliging toepassen'),
+(23, 'Kan principes van Secure Software Development Life Cycle (SSDLC) toepassen'),
+(24, 'Kan controleren of een ontwerp van software voldoet aan gangbare beveiligingseisen en de bevindingen toelichten aan betrokkenen'),
+(25, 'Kan met betrokkenen communiceren over werkzaamheden'),
+(26, 'Kan gesprekstechnieken toepassen (zoals luisteren, samenvatten, doorvragen)'),
+(27, 'Kan relevante wetgeving op het gebied van privacy, intellectueel eigendomsrecht, computercriminaliteit toepassen op software'),
+(28, 'Kan projectmatig werken'),
+(29, 'Kan presentatietechnieken toepassen');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kd_wps`
+--
+
+CREATE TABLE `kd_wps` (
+  `kd_wp_id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `info1` text COLLATE utf8mb4_unicode_ci,
+  `info2` text COLLATE utf8mb4_unicode_ci,
+  `info3` text COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `kd_wps`
+--
+
+INSERT INTO `kd_wps` (`kd_wp_id`, `name`, `info1`, `info2`, `info3`) VALUES
+(1, 'Plant werkzaamheden en bewaakt de voortgang', 'Omschrijving: De beginnend beroepsbeoefenaar overlegt met de opdrachtgever/ leidinggevende/ belanghebbenden wat er ontwikkeld moet worden en wanneer dit klaar moet zijn. Hij/zij verzamelt de benodigde informatie, waaronder te realiseren software(onderdelen), eisen en wensen van de opdrachtgever/ leidinggevende/ belanghebbenden en specificaties uit de opdracht. Hij/zij vertaalt de informatie in doelen. Hij/zij maakt een inschatting van de hoeveelheid werk die dit gaat kosten en maakt een planning om tot het gewenste resultaat te komen. Tijdens het ontwikkelproces houdt de beginnend beroepsbeoefenaar bij wat hij/zij heeft gedaan, welke taken nog uitgevoerd moeten worden en gaat na of de planning in gevaar komt. Hij/zij meldt opdrachtgever/ leidinggevende/ belanghebbenden wanneer doelen en/of planning niet worden gehaald en zoekt in overleg naar een oplossing.', 'Resultaat: Doelen en planning zijn afgestemd met de opdrachtgever/ leidinggevende/ belanghebbenden.', 'Gedrag: De beginnend beroepsbeoefenaar: - stemt doelen en planning af met opdrachtgever/ leidinggevende/ belanghebbenden en vraagt door totdat deze zaken duidelijk zijn. - trekt logische conclusies uit de beschikbare informatie over de benodigde werkzaamheden en eventuele risico\'s. - stelt realistische doelen, prioriteiten en een realistisch tijdspad op voor de te realiseren software(onderdelen). - bewaakt de gestelde doelen en planning.'),
+(2, 'Ontwerpt software', 'Omschrijving: De beginnend beroepsbeoefenaar maakt een (deel)ontwerp dat aansluit op de geformuleerde eisen en wensen. Op basis van de informatie uit de opdracht en planning zet hij/zij alternatieven voor het ontwerp naast elkaar en werkt het meest kansrijke alternatief/de meest kansrijke alternatieven uit. Bij het ontwerpen houdt de beginnend beroepsbeoefenaar rekening met de ontwikkelomgeving, programmeertaal en/of techniek. Bij het (deel)ontwerp houdt hij/zij tevens rekening met eisen rond privacy, ethiek en veiligheid.', 'Resultaat: Het (deel)ontwerp sluit aan op de geformuleerde eisen en wensen.', 'Gedrag: De beginnend beroepsbeoefenaar: - beargumenteert met steekhoudende argumenten de gemaakte keuzes in het ontwerp. - controleert of het ontwerp voldoet aan de gestelde eisen en wensen en doet indien nodig voorstellen om het ontwerp aan te passen. - volgt de geldende protocollen en regelgeving rondom privacy, ethiek en veiligheid van de software nauwgezet op en laat dit in het ontwerp zien.'),
+(3, 'Realiseert (onderdelen van) software', 'Omschrijving: De beginnend beroepsbeoefenaar werkt aan het ontwikkelen van (onderdelen van) software voor het (deel)ontwerp. Hij/zij programmeert de software. Hij/zij schrijft de benodigde code en integreert waar nodig (aangeleverde) assets zoals bijvoorbeeld video, mediamateriaal, bibliotheken, code van anderen. Hij/zij brengt logica, overzicht en efficiëntie aan in objecten, klassen en/of onderlinge relaties. Hij/zij controleert of het werk voldoet aan gangbare code conventies en eisen rond privacy en veiligheid.', 'Resultaat: De software werkt en voldoet aan de opdracht, het ontwerp en de geldende code conventies.', 'Gedrag: De beginnend beroepsbeoefenaar: - kiest de juiste materialen en middelen (gebruikersinterface, software/softwaretools - editors en compilers) en gebruikt deze effectief. - hanteert de code conventies volgens de voorgeschreven wijze. - realiseert software die netjes en goed leesbaar is. - realiseert de software nauwgezet conform de eisen uit opdracht en ontwerp. - presteert onder (tijds)druk en/of in een stressvolle omgeving effectief en productief. - werkt in het geval van integratie van assets samen met andere betrokkenen en stemt met hen een heldere taakverdeling af.'),
+(4, 'Test software', 'Omschrijving: De beginnend beroepsbeoefenaar maakt testscenario’s voor het testen van de gerealiseerde software. Hij/zij kiest een passende testvorm, zoals eigen test van software, unit tests, integratietest, acceptatietest en kiest een passende testmethodiek. Hij/zij bepaalt wat nodig is voor het testen, zoals bijvoorbeeld de testomgeving, middelen en test data. Vervolgens voert de beginnend beroepsbeoefenaar de test(s) uit. Hij/zij interpreteert de bevindingen en trekt conclusies.', 'Resultaat: De testactiviteiten zijn correct uitgevoerd en er zijn plausibele conclusies getrokken.', 'Gedrag: De beginnend beroepsbeoefenaar: - voert snel, correct en adequaat de testactiviteiten uit. - interpreteert de testresultaten en trekt logische conclusies. - legt testresultaten en conclusies nauwkeurig, duidelijk en conform bedrijfs- of beroepsstandaarden vast.'),
+(5, 'Doet verbetervoorstellen voor de software', 'Omschrijving: De beginnend beroepsbeoefenaar interpreteert wensen, reacties, testresultaten en/of meldingen van opdrachtgever/ leidinggevende/ belanghebbenden voor het aanpassen van (onderdelen van) software, voor software in ontwikkeling of voor software die moet worden aangepast. Hij/zij vertaalt dit in een voorstel voor verbetering van de software. Daarbij stemt hij/zij met opdrachtgever/ leidinggevende/ belanghebbenden af welke werkzaamheden moeten worden uitgevoerd en wanneer dit gebeurt.', 'Resultaat: Voorstellen voor verbetering van de software zijn afgestemd met de opdrachtgever/ leidinggevende/ belanghebbenden.', 'Gedrag: De beginnend beroepsbeoefenaar: - analyseert systematisch alle beschikbare informatiebronnen voor de aan te passen software. - toont technisch inzicht en abstractievermogen bij het interpreteren en vertalen van wensen, reacties, testresultaten en/of meldingen van opdrachtgever/ leidinggevende/ belanghebbenden naar realiseerbare verbetervoorstellen. - stemt met opdrachtgever/ leidinggevende/ belanghebbenden duidelijk af welke werkzaamheden benodigd zijn, evenals een haalbare planning.'),
+(6, 'Voert overleg', 'Omschrijving: De beginnend beroepsbeoefenaar voert overleg met de leidinggevende en/of het projectteam waarin hij/zij werkt. Hij/zij informeert hen over de eigen werkzaamheden en resultaten en draagt ideeën, oplossingen of meningen aan. Hij/zij meldt uitdagingen en knelpunten en/of vraagt advies. Ten slotte maakt de beginnend beroepsbeoefenaar vervolgafspraken met de leidinggevende en/of het projectteam.', 'Resultaat: De eigen werkzaamheden, resultaten en ideeën zijn gecommuniceerd, feedback is gevraagd en vervolgafspraken zijn helder.', 'Gedrag: De beginnend beroepsbeoefenaar: - brengt actief noodzakelijke en relevante onderwerpen voor het overleg in. - participeert actief en zelfkritisch in het overleg, door het melden van uitdagingen en knelpunten en/of vragen om advies. - formuleert afspraken eenduidig. - houdt zich aan de afspraken / werkwijze voor het voeren van overleg.'),
+(7, 'Presenteert het opgeleverde werk', 'Omschrijving: De beginnend beroepsbeoefenaar toont het opgeleverde (deel)product aan de opdrachtgever/ leidinggevende/ belanghebbenden, leidinggevende en/of het team, zoals bijvoorbeeld een ontwerp, gerealiseerde software of testresultaten. Hij/zij presenteert de functionaliteiten van het (deel)product, geeft inzicht in de uitgevoerde werkzaamheden, beantwoordt vragen en legt verantwoording af over de keuzes die hij/zij gemaakt heeft.', 'Resultaat: Betrokkenen zijn goed geïnformeerd over het opgeleverde werk en de uitgevoerde werkzaamheden.', 'Gedrag: De beginnend beroepsbeoefenaar: - legt de opgeleverde functionaliteiten duidelijk uit en weet vragen over het opgeleverde product of de uitgevoerde werkzaamheden adequaat te beantwoorden. - houdt een goed opgebouwd en met argumenten onderbouwd verhaal en controleert of de boodschap is overgekomen. - maakt contact met de toehoorders en stemt de stijl van communiceren en eventuele presentatiemiddelen af op de doelgroep.'),
+(8, 'Reflecteert op het werk', 'Omschrijving: De beginnend beroepsbeoefenaar draagt bij aan de evaluatie na oplevering van een (deel)product. Hij/zij reflecteert op de eigen prestaties, alsmede het teamproces en/of de werkwijze. Hij/zij benoemt wat goed ging en waar verbeteringen mogelijk zijn. Indien nodig geeft hij/zij collega’s feedback.', 'Resultaat: De eigen prestaties zijn geëvalueerd, alsmede het teamproces en/of de werkwijze', 'Gedrag: De beginnend beroepsbeoefenaar: - stelt zich open voor feedback en vraagt expliciet naar de mening en ideeën van anderen. - geeft positieve, constructieve feedback over het werk en/of de inbreng van anderen. - toont zich kritisch op het eigen werk.');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `calendar`
+--
+ALTER TABLE `calendar`
+  ADD PRIMARY KEY (`calendar_id`);
+
+--
+-- Indexes for table `calendar_part`
+--
+ALTER TABLE `calendar_part`
+  ADD PRIMARY KEY (`calendar_id`,`calendar_part_id`),
+  ADD KEY `calendar_part_id` (`calendar_part_id`);
+
+--
+-- Indexes for table `calendar_parts`
+--
+ALTER TABLE `calendar_parts`
+  ADD PRIMARY KEY (`calendar_part_id`),
+  ADD KEY `calendar_part_type_id` (`calendar_part_type_id`);
+
+--
+-- Indexes for table `calendar_part_types`
+--
+ALTER TABLE `calendar_part_types`
+  ADD PRIMARY KEY (`calendar_part_type_id`);
+
+--
+-- Indexes for table `cohorts`
+--
+ALTER TABLE `cohorts`
+  ADD PRIMARY KEY (`cohort_id`),
+  ADD KEY `kd_id` (`kd_id`);
+
+--
+-- Indexes for table `cohort_curunits`
+--
+ALTER TABLE `cohort_curunits`
+  ADD PRIMARY KEY (`cohort_curunit_id`),
+  ADD KEY `cohort_id` (`cohort_id`),
+  ADD KEY `curunit_id` (`curunit_id`),
+  ADD KEY `calendar_part_id` (`calendar_part_id`);
+
+--
+-- Indexes for table `cohort_curunit_holders`
+--
+ALTER TABLE `cohort_curunit_holders`
+  ADD PRIMARY KEY (`cohort_curunit_id`,`curunit_holder_id`),
+  ADD KEY `curunit_holder_id` (`curunit_holder_id`);
+
+--
+-- Indexes for table `curunits`
+--
+ALTER TABLE `curunits`
+  ADD PRIMARY KEY (`curunit_id`),
+  ADD KEY `curunit_type_id` (`curunit_type_id`);
+
+--
+-- Indexes for table `curunit_holders`
+--
+ALTER TABLE `curunit_holders`
+  ADD PRIMARY KEY (`curunit_holder_id`);
+
+--
+-- Indexes for table `curunit_kd_skill`
+--
+ALTER TABLE `curunit_kd_skill`
+  ADD PRIMARY KEY (`curunit_id`,`kd_skill_id`),
+  ADD KEY `kd_skill_id` (`kd_skill_id`);
+
+--
+-- Indexes for table `curunit_kd_wp`
+--
+ALTER TABLE `curunit_kd_wp`
+  ADD PRIMARY KEY (`curunit_id`,`kd_wp_id`),
+  ADD KEY `kd_wp_id` (`kd_wp_id`);
+
+--
+-- Indexes for table `curunit_tag`
+--
+ALTER TABLE `curunit_tag`
+  ADD PRIMARY KEY (`curunit_id`,`curunit_tag_id`),
+  ADD KEY `curunit_tag_id` (`curunit_tag_id`);
+
+--
+-- Indexes for table `curunit_tags`
+--
+ALTER TABLE `curunit_tags`
+  ADD PRIMARY KEY (`curunit_tag_id`);
+
+--
+-- Indexes for table `curunit_types`
+--
+ALTER TABLE `curunit_types`
+  ADD PRIMARY KEY (`curunit_type_id`);
+
+--
+-- Indexes for table `kds`
+--
+ALTER TABLE `kds`
+  ADD PRIMARY KEY (`kd_id`);
+
+--
+-- Indexes for table `kd_core`
+--
+ALTER TABLE `kd_core`
+  ADD PRIMARY KEY (`kd_id`,`kd_core_id`),
+  ADD KEY `kd_core_id` (`kd_core_id`);
+
+--
+-- Indexes for table `kd_cores`
+--
+ALTER TABLE `kd_cores`
+  ADD PRIMARY KEY (`kd_core_id`);
+
+--
+-- Indexes for table `kd_core_skills`
+--
+ALTER TABLE `kd_core_skills`
+  ADD PRIMARY KEY (`kd_core_id`,`kd_skill_id`),
+  ADD KEY `kd_skill_id` (`kd_skill_id`);
+
+--
+-- Indexes for table `kd_core_wps`
+--
+ALTER TABLE `kd_core_wps`
+  ADD PRIMARY KEY (`kd_core_id`,`kd_wp_id`),
+  ADD KEY `kd_wp_id` (`kd_wp_id`);
+
+--
+-- Indexes for table `kd_skills`
+--
+ALTER TABLE `kd_skills`
+  ADD PRIMARY KEY (`kd_skill_id`);
+
+--
+-- Indexes for table `kd_wps`
+--
+ALTER TABLE `kd_wps`
+  ADD PRIMARY KEY (`kd_wp_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `calendar`
+--
+ALTER TABLE `calendar`
+  MODIFY `calendar_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `calendar_parts`
+--
+ALTER TABLE `calendar_parts`
+  MODIFY `calendar_part_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+
+--
+-- AUTO_INCREMENT for table `calendar_part_types`
+--
+ALTER TABLE `calendar_part_types`
+  MODIFY `calendar_part_type_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `cohorts`
+--
+ALTER TABLE `cohorts`
+  MODIFY `cohort_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `cohort_curunits`
+--
+ALTER TABLE `cohort_curunits`
+  MODIFY `cohort_curunit_id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `curunits`
+--
+ALTER TABLE `curunits`
+  MODIFY `curunit_id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `curunit_holders`
+--
+ALTER TABLE `curunit_holders`
+  MODIFY `curunit_holder_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `curunit_tags`
+--
+ALTER TABLE `curunit_tags`
+  MODIFY `curunit_tag_id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `curunit_types`
+--
+ALTER TABLE `curunit_types`
+  MODIFY `curunit_type_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `kds`
+--
+ALTER TABLE `kds`
+  MODIFY `kd_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `kd_cores`
+--
+ALTER TABLE `kd_cores`
+  MODIFY `kd_core_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `kd_skills`
+--
+ALTER TABLE `kd_skills`
+  MODIFY `kd_skill_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT for table `kd_wps`
+--
+ALTER TABLE `kd_wps`
+  MODIFY `kd_wp_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `calendar_part`
+--
+ALTER TABLE `calendar_part`
+  ADD CONSTRAINT `calendar_part_ibfk_1` FOREIGN KEY (`calendar_id`) REFERENCES `calendar` (`calendar_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `calendar_part_ibfk_2` FOREIGN KEY (`calendar_part_id`) REFERENCES `calendar_parts` (`calendar_part_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `calendar_parts`
+--
+ALTER TABLE `calendar_parts`
+  ADD CONSTRAINT `calendar_parts_ibfk_1` FOREIGN KEY (`calendar_part_type_id`) REFERENCES `calendar_part_types` (`calendar_part_type_id`) ON DELETE SET NULL;
+
+--
+-- Constraints for table `cohorts`
+--
+ALTER TABLE `cohorts`
+  ADD CONSTRAINT `cohorts_ibfk_1` FOREIGN KEY (`kd_id`) REFERENCES `kds` (`kd_id`) ON DELETE SET NULL;
+
+--
+-- Constraints for table `cohort_curunits`
+--
+ALTER TABLE `cohort_curunits`
+  ADD CONSTRAINT `cohort_curunits_ibfk_1` FOREIGN KEY (`cohort_id`) REFERENCES `cohorts` (`cohort_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cohort_curunits_ibfk_2` FOREIGN KEY (`curunit_id`) REFERENCES `curunits` (`curunit_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cohort_curunits_ibfk_3` FOREIGN KEY (`calendar_part_id`) REFERENCES `calendar_parts` (`calendar_part_id`) ON DELETE SET NULL;
+
+--
+-- Constraints for table `cohort_curunit_holders`
+--
+ALTER TABLE `cohort_curunit_holders`
+  ADD CONSTRAINT `cohort_curunit_holders_ibfk_1` FOREIGN KEY (`cohort_curunit_id`) REFERENCES `cohort_curunits` (`cohort_curunit_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cohort_curunit_holders_ibfk_2` FOREIGN KEY (`curunit_holder_id`) REFERENCES `curunit_holders` (`curunit_holder_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `curunits`
+--
+ALTER TABLE `curunits`
+  ADD CONSTRAINT `curunits_ibfk_1` FOREIGN KEY (`curunit_type_id`) REFERENCES `curunit_types` (`curunit_type_id`) ON DELETE SET NULL;
+
+--
+-- Constraints for table `curunit_kd_skill`
+--
+ALTER TABLE `curunit_kd_skill`
+  ADD CONSTRAINT `curunit_kd_skill_ibfk_1` FOREIGN KEY (`curunit_id`) REFERENCES `curunits` (`curunit_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `curunit_kd_skill_ibfk_2` FOREIGN KEY (`kd_skill_id`) REFERENCES `kd_skills` (`kd_skill_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `curunit_kd_wp`
+--
+ALTER TABLE `curunit_kd_wp`
+  ADD CONSTRAINT `curunit_kd_wp_ibfk_1` FOREIGN KEY (`curunit_id`) REFERENCES `curunits` (`curunit_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `curunit_kd_wp_ibfk_2` FOREIGN KEY (`kd_wp_id`) REFERENCES `kd_wps` (`kd_wp_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `curunit_tag`
+--
+ALTER TABLE `curunit_tag`
+  ADD CONSTRAINT `curunit_tag_ibfk_1` FOREIGN KEY (`curunit_id`) REFERENCES `curunits` (`curunit_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `curunit_tag_ibfk_2` FOREIGN KEY (`curunit_tag_id`) REFERENCES `curunit_tags` (`curunit_tag_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `kd_core`
+--
+ALTER TABLE `kd_core`
+  ADD CONSTRAINT `kd_core_ibfk_1` FOREIGN KEY (`kd_id`) REFERENCES `kds` (`kd_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `kd_core_ibfk_2` FOREIGN KEY (`kd_core_id`) REFERENCES `kd_cores` (`kd_core_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `kd_core_skills`
+--
+ALTER TABLE `kd_core_skills`
+  ADD CONSTRAINT `kd_core_skills_ibfk_1` FOREIGN KEY (`kd_core_id`) REFERENCES `kd_cores` (`kd_core_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `kd_core_skills_ibfk_2` FOREIGN KEY (`kd_skill_id`) REFERENCES `kd_skills` (`kd_skill_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `kd_core_wps`
+--
+ALTER TABLE `kd_core_wps`
+  ADD CONSTRAINT `kd_core_wps_ibfk_1` FOREIGN KEY (`kd_core_id`) REFERENCES `kd_cores` (`kd_core_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `kd_core_wps_ibfk_2` FOREIGN KEY (`kd_wp_id`) REFERENCES `kd_wps` (`kd_wp_id`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
